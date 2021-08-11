@@ -1,14 +1,18 @@
 const boxes = document.querySelectorAll('.box')
 const result= document.querySelector('#result')
 const [button]= document.getElementsByTagName('button')
+const playerXScore= document.querySelector('#playerX')
+const playerOScore= document.querySelector('#playerO')
+
  //console.log(boxes)
 const playerX = 'X'
 const playerO = 'O'
+let score={X:0,O:0}
 let currentPlayer = playerX
 let XO = []
 let winstatus = false
 let drawstatus = false
-        
+      
 const draw = ()=>{
     let boxfilled = 0
     //console.log('hhh')
@@ -32,16 +36,28 @@ const win =(e)=>{
             //console.log('hhhh')
             result.innerText = `Player ${currentPlayer} won!!`
             button.innerText='new game'
+            winstatus=true
+            score[currentPlayer]+=1
+            playerOScore.innerText=`Player O score : ${score.O}`
+            playerXScore.innerText=`Player X score : ${score.X}`            
             return true
         }
         if(XO[3] === currentPlayer && XO[6] === currentPlayer){
             result.innerText = `Player ${currentPlayer} won!!`
             button.innerText='new game'
+            winstatus=true
+            score[currentPlayer]+=1
+            playerOScore.innerText=`Player O score : ${score.O}`
+            playerXScore.innerText=`Player X score : ${score.X}`
             return true
         }
         if(XO[4] === currentPlayer && XO[8] === currentPlayer){
             result.innerText = `Player ${currentPlayer} won!!`
             button.innerText='new game'
+            winstatus=true
+            score[currentPlayer]+=1
+            playerOScore.innerText=`Player O score : ${score.O}`
+            playerXScore.innerText=`Player X score : ${score.X}`            
             return true
         }
     }
@@ -50,16 +66,28 @@ const win =(e)=>{
         if(XO[1] === currentPlayer && XO[7] === currentPlayer){
             result.innerText = `Player ${currentPlayer} won!!`
             button.innerText='new game'
+            winstatus=true
+            score[currentPlayer]+=1
+            playerOScore.innerText=`Player O score : ${score.O}`
+            playerXScore.innerText=`Player X score : ${score.X}`
             return true
         }
         if(XO[3] === currentPlayer && XO[5] === currentPlayer){
             result.innerText = `Player ${currentPlayer} won!!`
             button.innerText='new game'
+            winstatus=true
+            score[currentPlayer]+=1
+            playerOScore.innerText=`Player O score : ${score.O}`
+            playerXScore.innerText=`Player X score : ${score.X}`
             return true
         }
         if(XO[6] === currentPlayer && XO[2] === currentPlayer){
             result.innerText = `Player ${currentPlayer} won!!`
             button.innerText='new game'
+            winstatus=true
+            score[currentPlayer]+=1
+            playerOScore.innerText=`Player O score : ${score.O}`
+            playerXScore.innerText=`Player X score : ${score.X}`
             return true
         }
     }
@@ -68,11 +96,19 @@ const win =(e)=>{
         if(XO[5] === currentPlayer && XO[2] === currentPlayer){
             result.innerText = `Player ${currentPlayer} won!!`
             button.innerText='new game'
+            winstatus=true
+            score[currentPlayer]+=1
+            playerOScore.innerText=`Player O score : ${score.O}`
+            playerXScore.innerText=`Player X score : ${score.X}`
             return true
         }
         if(XO[6] === currentPlayer && XO[7] === currentPlayer){
             result.innerText = `Player ${currentPlayer} won!!`
             button.innerText='new game'
+            winstatus=true
+            score[currentPlayer]+=1
+            playerOScore.innerText=`Player O score : ${score.O}`
+            playerXScore.innerText=`Player X score : ${score.X}`
             return true
         }
     }
@@ -87,7 +123,6 @@ const restart=()=>{
     result.innerText=''
     button.innerText='restart'
 }
-
 const boxclick = (e)=>{
     const id = e.target.id
     if(!winstatus && !drawstatus){

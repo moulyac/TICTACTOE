@@ -19,7 +19,7 @@ h1{
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 .box{
     width: 10vw;
@@ -32,7 +32,6 @@ h1{
 #result{
     font-size: 2rem;
     text-align: center;
-    margin-top: 2rem;
     color: rgb(27, 117, 83);
 }
 .buttonStyle{
