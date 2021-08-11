@@ -122,7 +122,10 @@ const restart=()=>{
     })
     result.innerText=''
     button.innerText='restart'
+    result.innerText=`Player ${currentPlayer}`
+
 }
+
 const boxclick = (e)=>{
     const id = e.target.id
     if(!winstatus && !drawstatus){
@@ -139,6 +142,7 @@ const boxclick = (e)=>{
                 return
             }
             currentPlayer = currentPlayer === playerO ? playerX : playerO
+            result.innerText=`Player ${currentPlayer}`
             }
         }
         if(winstatus || drawstatus){
@@ -166,5 +170,7 @@ const boxclick = (e)=>{
                 box.style = styleboard
                 box.addEventListener('click',boxclick)
             })
+            result.innerText=`Player ${currentPlayer}`
+ 
         }
 boxstyle()
