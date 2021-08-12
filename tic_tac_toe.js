@@ -123,7 +123,6 @@ const restart=()=>{
     result.innerText=''
     button.innerText='restart'
     result.innerText=`Player ${currentPlayer}`
-
 }
 
 const boxclick = (e)=>{
